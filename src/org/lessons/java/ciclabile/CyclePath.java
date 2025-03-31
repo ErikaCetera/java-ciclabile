@@ -35,16 +35,11 @@ public class CyclePath {
     public boolean hasNextElem() {
         return currentIndex < integer.length;
     }
-
+  
     // Metodo che restituisce l'elemento successivo
-    public Object getNextElem() {
-        if (hasNextElem()) {
-            int elem = integer[currentIndex];
-            currentIndex++;
-            return elem;
-        } else {
-            return "Non ci sono altri elementi!";
-        }
+    public int getNextElem() {
+        return integer[currentIndex++];
+        
     }
 
     // Metodo per aggiungere un nuovo elemento all'array
@@ -57,10 +52,7 @@ public class CyclePath {
             newArray[i] = integer[i];
         }
 
-        // aggiunge un nuovo elemento
         newArray[integer.length] = element;
-
-        // aggiorna l'array iniziale
         this.integer = newArray;
     }
 
